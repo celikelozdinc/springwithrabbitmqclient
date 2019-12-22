@@ -26,7 +26,7 @@ public class Application implements CommandLineRunner {
     public void run(String... args) throws Exception {
         System.out.println("MAIN CLASS of CLIENT PROCESS HAS BEEN STARTED.");
         client.send();
-
+        System.out.println("NOW CLIENT CAN CONTINUE FOR REMAINING TASKS.");
     }
 
     public static void main(String[] args) {

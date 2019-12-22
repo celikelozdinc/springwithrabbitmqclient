@@ -36,7 +36,9 @@ public class Client {
         Message msg = new Message();
         msg.setHostname(hostname);
         msg.setIpAddr(ipAddr);
-        rabbitTemplate.convertAndSend(IPC_EXCHANGE,IPC_ROUTING_KEY, msg);
+        //rabbitTemplate.convertAndSend(IPC_EXCHANGE,IPC_ROUTING_KEY, msg);
+        String reply = (String) rabbitTemplate.convertSendAndReceive(IPC_EXCHANGE,"rpc",msg);
+        logger.info("Response from server = {}",reply);
     }
 
 }
